@@ -3,7 +3,7 @@ Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	1.0
-Release:	7
+Release:	8
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -17,8 +17,9 @@ BuildArch:	noarch
 Obsoletes:	redhat-release
 Obsoletes:	mandrake-release
 Obsoletes:	issue
-Obsoletes:	issue-pure
+Obsoletes:	issue-alpha
 Obsoletes:	issue-logo
+Obsoletes:	issue-pure
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
@@ -33,7 +34,7 @@ Wersja Linuksa PLD z logiem.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{cron.d,rc.d/init.d},%{_sbindir}}
+install -d $RPM_BUILD_ROOT{/etc/{cron.d,rc.d/init.d},%{_sbindir}}
 
 install %{SOURCE0} $RPM_BUILD_ROOT%{_sbindir}
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/%{name}
