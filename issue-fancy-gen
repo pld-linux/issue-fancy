@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# Accepts one argument which is treated somewhat like DESTDIR.
-
-FORMAT='Welcome to #H.mmm (on \l)\n#O Version #V, Compiled #C\n#N #M #X #T Processor#S, #R RAM, #B Bogomips\n#U\n'
-FORMAT_NET='Welcome to %h (on pts/%l)\n#O Version #V, Compiled #C\n#N #M #X #T Processor#S, #R RAM, #B Bogomips\n#U\n'
-linux_logo -b -q -F "$FORMAT" > $1/etc/issue
-linux_logo -a -q -F "$FORMAT_NET" > $1/etc/issue.net
