@@ -2,7 +2,7 @@ Summary:	PLD Linux release file with logo
 Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
-Version:	1.99
+Version:	1.1
 Release:	1
 License:	GPL
 Group:		Base
@@ -44,7 +44,7 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/issue-fancy
 
 $RPM_BUILD_ROOT%{_sbindir}/issue-fancy-gen $RPM_BUILD_ROOT
 
-echo "1.99 PLD Linux (Ac)" > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
+echo "1.1 PLD Linux (Ra)" > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
 
 %clean
 rm -rf $RPM_BUILD_ROOT
