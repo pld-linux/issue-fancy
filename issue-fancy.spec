@@ -1,8 +1,13 @@
+
+%define	distname	Ac
+%define	distversion	1.99
+%define	distrelease	"%{distversion} PLD Linux (%{distname})"
+
 Summary:	PLD Linux release file with logo
 Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
-Version:	1.99
+Version:	%{distversion}
 Release:	1
 License:	GPL
 Group:		Base
@@ -44,7 +49,7 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/issue-fancy
 
 $RPM_BUILD_ROOT%{_sbindir}/issue-fancy-gen $RPM_BUILD_ROOT
 
-echo "1.99 PLD Linux (Ac)" > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
+echo %{distrelease} > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
 
 %clean
 rm -rf $RPM_BUILD_ROOT
