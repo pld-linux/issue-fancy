@@ -3,7 +3,7 @@ Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	1.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		Base
 Group(de):	Gründsätzlich
@@ -12,7 +12,7 @@ Group(pl):	Podstawowe
 Group(pt_BR):	Base
 Source0:	%{name}-gen
 Source1:	%{name}.crontab
-Source2:	%{name}.sysconfig
+Source2:	%{name}.init
 Requires:	crondaemon
 # In fact it requires quote_logo_backslashes patch.
 Requires:	linux_logo >= 3.9b5
@@ -44,20 +44,17 @@ $RPM_BUILD_ROOT/sbin/issue-fancy-gen $RPM_BUILD_ROOT
 
 echo "1.0 PLD Linux (Ra)" > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/issue-fancy-gen
-
-if [ "$1" != "0" ]; then
-	/sbin/chkconfig --add issue-fancy
-fi
+/sbin/chkconfig --add issue-fancy
 
 %preun
 if [ "$1" = "0" ]; then
 	/sbin/chkconfig --del issue-fancy
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
