@@ -14,13 +14,13 @@ BuildRequires:	linux_logo >= 3.9b5
 Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	redhat-release
 Obsoletes:	mandrake-release
 Obsoletes:	issue
 Obsoletes:	issue-alpha
 Obsoletes:	issue-logo
 Obsoletes:	issue-pure
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
 
