@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_sysconfdir}/pld-release
-# Can't use "noreplace" here because issues are are regenerated from cron
+# Can't use "noreplace" here because issues are regenerated from cron
 # and %post. Without "noreplace" at least ".rpmsave" will stay.
 %config %{_sysconfdir}/issue*
 %attr(755,root,root) /sbin/*
