@@ -20,6 +20,8 @@ Obsoletes:	issue-pure
 Obsoletes:	issue-logo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_sbindir	/sbin
+
 %description
 PLD Linux release file with logo.
 
@@ -30,13 +32,13 @@ Wersja Linuksa PLD z logiem.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{cron.d,rc.d/init.d},/sbin}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{cron.d,rc.d/init.d},%{_sbindir}}
 
-install %{SOURCE0} $RPM_BUILD_ROOT/sbin
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d/%{name}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/issue-fancy
+install %{SOURCE0} $RPM_BUILD_ROOT%{_sbindir}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/issue-fancy
 
-$RPM_BUILD_ROOT/sbin/issue-fancy-gen $RPM_BUILD_ROOT
+$RPM_BUILD_ROOT%{_sbindir}/issue-fancy-gen $RPM_BUILD_ROOT
 
 echo "1.0 PLD Linux (Ra)" > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
 
@@ -58,6 +60,6 @@ fi
 # Can't use "noreplace" here because issues are regenerated from cron
 # and %post. Without "noreplace" at least ".rpmsave" will stay.
 %config %{_sysconfdir}/issue*
-%attr(755,root,root) /sbin/*
+%attr(755,root,root) %{_sbindir}/*
 %attr(600,root,root) /etc/cron.d/*
 %attr(754,root,root) /etc/rc.d/init.d/*
