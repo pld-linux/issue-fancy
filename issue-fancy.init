@@ -10,6 +10,7 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 # Source function library.
 . /etc/rc.d/init.d/functions
 
+
 case "$1" in
 	start)
 		issue-fancy-gen
@@ -18,7 +19,9 @@ case "$1" in
 		# Yap, do *nothing*, but accept argument.
 		;;
 	*)
-		msg_usage "$0 start"
+		msg_usage "$0 {start|stop|reload|restart|status}"
 		exit 1
 		;;
 esac
+
+exit 0
