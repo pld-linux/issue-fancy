@@ -4,4 +4,21 @@
 # description:	Regenerates issue* files for issue-fancy (they \
 #		contain uptime).
 #
-issue-logo-fancy
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+case "$1" in
+	start)
+		issue-fancy-gen
+		;;
+	stop)
+		# Yap, do *nothing*, but accept argument.
+		;;
+	*)
+		msg_usage "$0 start"
+		exit 1
+		;;
+esac
