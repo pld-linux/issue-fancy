@@ -11,6 +11,8 @@ Source1:	%{name}.crontab
 Source2:	%{name}.init
 # In fact it requires quote_logo_backslashes patch.
 BuildRequires:	linux_logo >= 3.9b5
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
 BuildArch:	noarch
