@@ -14,7 +14,7 @@ case "$1" in
 	start)
 		issue-fancy-gen
 		;;
-	stop)
+	stop|status|reload|restart)
 		# Yap, do *nothing*, but accept argument.
 		;;
 	*)
