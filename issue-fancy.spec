@@ -3,7 +3,7 @@ Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	1.0
-Release:	6
+Release:	7
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -11,6 +11,7 @@ Source1:	%{name}.crontab
 Source2:	%{name}.init
 # In fact it requires quote_logo_backslashes patch.
 BuildRequires:	linux_logo >= 3.9b5
+Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
 BuildArch:	noarch
 Obsoletes:	redhat-release
