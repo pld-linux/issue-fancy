@@ -12,16 +12,15 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 
 case "$1" in
-	start)
-		issue-fancy-gen
-		;;
-	stop|status|reload|restart)
-		# Yap, do *nothing*, but accept argument.
-		;;
-	*)
-		msg_usage "$0 {start|stop|reload|restart|status}"
-		exit 1
-		;;
+  start|restart|force-reload)
+	issue-fancy-gen
+	;;
+  stop|status)
+	# Yap, do *nothing*, but accept argument.
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|force-reload|status}"
+	exit 3
 esac
 
 exit 0
