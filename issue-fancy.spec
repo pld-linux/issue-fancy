@@ -3,7 +3,7 @@ Summary(de):	PLD Linux Release-Datei mit logo
 Summary(pl):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	1.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Base
 Group(cs):	Základ
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{cron.d,rc.d/init.d},/sbin}
 
 install %{SOURCE0} $RPM_BUILD_ROOT/sbin
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d/%{name}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/issue-fancy
 
 $RPM_BUILD_ROOT/sbin/issue-fancy-gen $RPM_BUILD_ROOT
