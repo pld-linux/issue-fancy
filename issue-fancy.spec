@@ -11,14 +11,17 @@ Group(da):	Basal
 Group(de):	Basis
 Group(es):	Base
 Group(fr):	Base
+Group(is):	Grunnforrit
 Group(it):	Base
 Group(ja):	╔ы║╪╔╧
 Group(no):	Basis
 Group(pl):	Podstawowe
 Group(pt):	Base
 Group(pt_BR):	Base
-Group(ru):	Базовый набор
+Group(ru):	База
+Group(sl):	Osnova
 Group(sv):	Bas
+Group(uk):	База
 Source0:	%{name}-gen
 Source1:	%{name}.crontab
 Source2:	%{name}.init
