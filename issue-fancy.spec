@@ -28,6 +28,7 @@ Obsoletes:	issue
 Obsoletes:	issue-alpha
 Obsoletes:	issue-logo
 Obsoletes:	issue-pure
+Obsoletes:	issue-nice
 
 %define		_sbindir	/sbin
 
