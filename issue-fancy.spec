@@ -1,6 +1,6 @@
 
 %define	distname	Ac
-%define	distversion	1.99
+%define	distversion	2.0
 %define	distrelease	"%{distversion} PLD Linux (%{distname})"
 
 Summary:	PLD Linux release file with logo
