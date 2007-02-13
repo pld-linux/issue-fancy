@@ -4,8 +4,8 @@
 %define	distrelease	"%{distversion} PLD Linux (%{distname})"
 
 Summary:	PLD Linux release file with logo
-Summary(de.UTF-8):   PLD Linux Release-Datei mit logo
-Summary(pl.UTF-8):   Wersja Linuksa PLD z logiem
+Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
+Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	%{distversion}
 Release:	1
