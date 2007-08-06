@@ -8,7 +8,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	%{distversion}
-Release:	1
+Release:	2
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -22,13 +22,9 @@ Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Provides:	issue
 Obsoletes:	redhat-release
 Obsoletes:	mandrake-release
-Obsoletes:	issue
-Obsoletes:	issue-alpha
-Obsoletes:	issue-logo
-Obsoletes:	issue-pure
-Obsoletes:	issue-nice
 
 %define		_sbindir	/sbin
 
