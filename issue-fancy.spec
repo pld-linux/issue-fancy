@@ -8,7 +8,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	%{distversion}
-Release:	2
+Release:	3
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -16,15 +16,19 @@ Source1:	%{name}.crontab
 Source2:	%{name}.init
 # In fact it requires quote_logo_backslashes patch.
 BuildRequires:	linux_logo >= 3.9b5
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
-BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	issue
+Provides:	issue-package
+Obsoletes:	issue-package
 Obsoletes:	redhat-release
 Obsoletes:	mandrake-release
+Conflicts:	issue-alpha < 2.99-2
+Conflicts:	issue-logo < 2.99-2
+Conflicts:	issue-pure < 2.99-5
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
 
