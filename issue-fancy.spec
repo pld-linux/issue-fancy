@@ -8,7 +8,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	%{distversion}
-Release:	3
+Release:	4
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -69,7 +69,8 @@ fi
 %{_sysconfdir}/pld-release
 # Can't use "noreplace" here because issues are regenerated from cron
 # and %post. Without "noreplace" at least ".rpmsave" will stay.
-%config %{_sysconfdir}/issue*
+%config %verify(not md5 mtime size) %{_sysconfdir}/issue
+%config %verify(not md5 mtime size) %{_sysconfdir}/issue.net
 %attr(755,root,root) %{_sbindir}/*
 %attr(600,root,root) /etc/cron.d/*
 %attr(754,root,root) /etc/rc.d/init.d/*
