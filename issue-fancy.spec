@@ -8,7 +8,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	%{distversion}
-Release:	4
+Release:	5
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -22,8 +22,6 @@ Requires:	crondaemon
 Provides:	issue
 Provides:	issue-package
 Obsoletes:	issue-package
-Obsoletes:	redhat-release
-Obsoletes:	mandrake-release
 Conflicts:	issue-alpha < 2.99-2
 Conflicts:	issue-logo < 2.99-2
 Conflicts:	issue-pure < 2.99-5
@@ -52,6 +50,18 @@ $RPM_BUILD_ROOT%{_sbindir}/issue-fancy-gen $RPM_BUILD_ROOT
 
 echo %{distrelease} > $RPM_BUILD_ROOT%{_sysconfdir}/pld-release
 
+# CPE_NAME = cpe:/ {part} : {vendor} : {product} : {version} : {update} : {edition} : {language}
+# http://cpe.mitre.org/specification/
+cat >$RPM_BUILD_ROOT%{_sysconfdir}/os-release <<EOF
+NAME="PLD Linux"
+VERSION="%{distversion} (%{distname})"
+ID="pld"
+VERSION_ID="%{distversion}"
+PRETTY_NAME="PLD Linux %{distversion} (%{distname})"
+ANSI_COLOR="0;32"
+CPE_NAME="cpe:/o:pld-linux:pld:%{distversion}"
+EOF
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -66,6 +76,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
+%{_sysconfdir}/os-release
 %{_sysconfdir}/pld-release
 # Can't use "noreplace" here because issues are regenerated from cron
 # and %post. Without "noreplace" at least ".rpmsave" will stay.
