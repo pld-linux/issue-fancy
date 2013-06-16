@@ -1,5 +1,5 @@
 %define	distnamever	%(. /etc/os-release && echo $VERSION)
-%define	distversion	%(. /etc/os-release && echo $VERSION_ID)
+%define	distversion	%(. /etc/os-release && echo ${VERSION_ID:-0})
 
 Summary:	PLD Linux release file with logo
 Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
