@@ -5,7 +5,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	3.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
@@ -18,7 +18,7 @@ BuildRequires:	pld-release >= 3.0
 Requires(post,preun):	/sbin/chkconfig
 Requires:	linux_logo >= 3.9b5
 Requires:	crondaemon
-Provides:	issue
+Provides:	issue = %{version}-%{release}
 Conflicts:	issue-alpha < 3.0-1
 Conflicts:	issue-logo < 3.0-1
 Conflicts:	issue-nice < 3.0-1
