@@ -5,7 +5,7 @@ Summary(de.UTF-8):	PLD Linux Release-Datei mit logo
 Summary(pl.UTF-8):	Wersja Linuksa PLD z logiem
 Name:		issue-fancy
 Version:	3.0
-Release:	14
+Release:	15
 License:	GPL
 Group:		Base
 Source0:	%{name}-gen
